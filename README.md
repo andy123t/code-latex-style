@@ -1,6 +1,6 @@
 # Code LaTeX Style
 
-**listings** package to design code style.
+**listings** package to design code style, mainly including MATLAB LaTeX highlight style and Python LaTeX highlight style.
 
 ## MATLAB LaTeX highlighting style
 
