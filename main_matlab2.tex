@@ -1,5 +1,5 @@
 % !Tex Program = xelatex
-% default code font fot pdflatex
+% default code font for pdflatex
 % other font setting for xelatex
 
 \documentclass[11pt]{article}
@@ -7,12 +7,11 @@
 
 \usepackage[left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}
 
-\input{mCodeX.tex}
+\input{matlab-style2.tex}
 
-% Default code font is ttfamily
-% Setting other special fonts
-\usepackage{fontspec}     % this package for XeLaTeX
-\lstset{basicstyle=\footnotesize\fontspec{Consolas}}   % Consolas Courier New
+% Default code font is ttfamily, setting other special fonts
+\usepackage{fontspec}   % this package for XeLaTeX
+\lstset{basicstyle=\footnotesize\fontspec{Consolas}} 
 
 
 \title{MATLAB highlighting in LaTeX documents}
