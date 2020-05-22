@@ -54,14 +54,14 @@
 \end{Matlab}
 
 \begin{Python}
-% Matlab Code
+% Python Code
 ······
 \end{Python}
 ```
 
 ### Result
 
-MATLAB highlighting style is the same as the first MATLAB style.
+MATLAB highlighting style is the same as the first one.
 
 Python highlighting style
 
