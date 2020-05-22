@@ -1,0 +1,52 @@
+% !Tex Program = xelatex
+% default code font fot pdflatex
+% other font setting for xelatex
+
+\documentclass[11pt]{article}
+%\usepackage{ctex}
+
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}
+
+\input{mCode.tex}
+
+% Default code font is ttfamily
+% Setting other special fonts
+\usepackage{fontspec}     % this package for XeLaTeX
+\lstset{basicstyle=\footnotesize\fontspec{Consolas}}   % Consolas Courier New
+
+
+\title{MATLAB highlighting in LaTeX documents}
+\author{Liutao~Tian \\ \texttt{andy123t@163.com}}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\section{MATLAB code demo}
+
+\begin{lstlisting}[title={Euler method}]
+% Euler method for the ODE model
+% u'(x)=x^2+x-u, x in [0,1]
+% Initial condition: u(0)=0 ;
+% Exact solution: u(x)=-exp(-x)+x^2-x+1.
+clear all;  clf
+h=0.1;
+x=0:h:1;                       % function interval
+N=length(x)-1;
+u(1)=0;                        % initial value
+fun=@(t,u) t.^2+t-u;           % RHS
+
+for n=1:N
+    u(n+1)=u(n)+h.*fun(x(n),u(n));
+end
+
+ue=-exp(-x)+x.^2-x+1;          % exact solution
+plot(x,ue,'b-',x,u,'r+','LineWidth',1)
+legend('Exact ','Numerical','location','North')
+%title('Euler method','fontsize',12)
+set(gca,'fontsize',12)
+xlabel('x','fontsize', 16), ylabel('u','fontsize',16,'Rotation',0)
+\end{lstlisting}
+
+\end{document} 

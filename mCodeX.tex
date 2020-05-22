@@ -1,0 +1,47 @@
+% Copyright 20120 Liutao Tian, MIT License
+% https://github.com/andy123t/matlab-latex-highlighting/
+
+\usepackage{listings,color}
+
+% Matlab highlight color settings
+%\definecolor{mBasic}{RGB}{248,248,242}       % default
+\definecolor{mKeyword}{RGB}{0,0,255}          % bule
+\definecolor{mString}{RGB}{160,32,240}        % purple
+\definecolor{mComment}{RGB}{34,139,34}        % green
+\definecolor{mBackground}{RGB}{245,245,245}   % lightgrey
+%\definecolor{mNumber}{RGB}{128,128,128}       % gray
+\definecolor{mNumber}{RGB}{134,145,148}       % gray
+\definecolor{mNumberbg}{RGB}{237,240,241}     % lightgrey
+
+\lstset{language=Matlab,               % choose the language of the code
+  %frame=tlbr,
+  xleftmargin=10pt,
+  xrightmargin=10pt,
+  frame=l,
+  framesep=14pt,%framerule=0pt,  % sets the frame style
+  %frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20},
+  basicstyle=\small\ttfamily,
+  keywordstyle={\color{mKeyword}},     % sets color for keywords
+  stringstyle={\color{mString}},       % sets color for strings
+  commentstyle={\color{mComment}},     % sets color for comments
+  backgroundcolor=\color{mBackground}, % choose the background color
+  title=\lstname,                      % show the filename of files included with \lstinputlisting;
+  keywords={break,case,catch,classdef,continue,else,elseif,end,for,
+  function,global,if,otherwise,parfor,persistent,return,spmd,switch,try,while},
+  showspaces=false,                    % show spaces adding particular underscores
+  showstringspaces=false,              % underline spaces within strings
+  showtabs=false,                      % show tabs within strings adding particular underscores
+  tabsize=4,                           % sets default tabsize to 2 spaces
+  captionpos=t,                        % sets the caption-position to bottom
+  breaklines=true,                     % sets automatic line breaking
+  breakatwhitespace=true,              % sets if automatic breaks should only happen at whitespace
+  %frame=l,
+  %framesep=5mm,
+  framexleftmargin=4pt,
+  fillcolor=\color{mNumberbg},
+  rulecolor=\color{mNumberbg},
+  numberstyle=\tiny\color{mNumber},
+  numbersep=8pt,                      % how far the line-numbers are from the code
+  numbers=left,                        % where to put the line-numbers
+  stepnumber=1,                        % the step between two line-numbers.
+}
