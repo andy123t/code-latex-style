@@ -46,7 +46,7 @@
 ``` latex
 \documentclass{article}
 
-\input{matlab-style2.tex}   % code style file
+\input{mp-style.tex}   % code style file
 
 \begin{Matlab}
 % Matlab Code
