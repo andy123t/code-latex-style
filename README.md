@@ -39,7 +39,7 @@
 
 ![main-matlab2](main-matlab2.png)
 
-## MATLAB and Python LaTeX highlighting style
+## MATLAB and Python LaTeX highlighting style 1
 
 ### Source
 
@@ -48,12 +48,12 @@
 
 \input{mp-style.tex}   % code style file
 
-\begin{Matlab}
+\begin{Matlab}{Matlab Code}
 % Matlab Code
 ······
 \end{Matlab}
 
-\begin{Python}
+\begin{Python}{Python Code}
 % Python Code
 ······
 \end{Python}
@@ -65,7 +65,37 @@ MATLAB highlighting style is the same as the first one.
 
 Python highlighting style
 
-![main-python](main-python.png)
+![main-python1](main-python1.png)
+
+
+## MATLAB and Python LaTeX highlighting style 2
+
+### Source
+
+``` latex
+\documentclass{article}
+
+\input{mp-style2.tex}   % code style file
+
+\begin{Matlab}{Matlab Code}
+% Matlab Code
+······
+\end{Matlab}
+
+\begin{Python}{Python Code}
+% Python Code
+······
+\end{Python}
+```
+
+### Result
+
+MATLAB highlighting style is the same as the second one.
+
+Python highlighting style
+
+![main-python2](main-python2.png)
+
 
 ## Code Style
 
