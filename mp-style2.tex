@@ -9,17 +9,9 @@
 \definecolor{mString}{RGB}{160,32,240}        % purple
 \definecolor{mComment}{RGB}{34,139,34}        % green
 \definecolor{mBackground}{RGB}{245,245,245}   % lightgrey
-\definecolor{mNumber}{RGB}{128,128,128}       % gray
-
-% Matlab highlight color settings
-%\definecolor{mBasic}{RGB}{248,248,242}       % default
-\definecolor{mKeyword}{RGB}{0,0,255}          % bule
-\definecolor{mString}{RGB}{160,32,240}        % purple
-\definecolor{mComment}{RGB}{34,139,34}        % green
-\definecolor{mBackground}{RGB}{245,245,245}   % lightgrey
-%\definecolor{mNumber}{RGB}{128,128,128}       % gray
 \definecolor{mNumber}{RGB}{134,145,148}       % gray
-\definecolor{mNumberbg}{RGB}{237,240,241}     % lightgrey
+
+\definecolor{Numberbg}{RGB}{237,240,241}     % lightgrey
 
 % Python highlight color settings
 %\definecolor{pBasic}{RGB}{248, 248, 242}     % default
@@ -28,12 +20,12 @@
 \definecolor{pComment}{RGB}{117,113,94}       % gray
 \definecolor{pIdentifier}{RGB}{166, 226, 46}  %
 \definecolor{pBackground}{RGB}{245,245,245}   % lightgrey
-\definecolor{pNumber}{RGB}{128,128,128}       % gray
+\definecolor{pNumber}{RGB}{134,145,148}       % gray
 
 \lstnewenvironment{Matlab}[1]{
 \lstset{language=Matlab,               % choose the language of the code
   %frame=tlbr,
-  xleftmargin=10pt,
+  xleftmargin=30pt,
   xrightmargin=10pt,
   frame=l,
   framesep=15pt,%framerule=0pt,  % sets the frame style
@@ -53,8 +45,8 @@
   captionpos=t,                        % sets the caption-position to bottom
   breaklines=true,                     % sets automatic line breaking
   framexleftmargin=5pt,
-  fillcolor=\color{mNumberbg},
-  rulecolor=\color{mNumberbg},
+  fillcolor=\color{Numberbg},
+  rulecolor=\color{Numberbg},
   numberstyle=\tiny\color{mNumber},
   numbersep=9pt,                      % how far the line-numbers are from the code
   numbers=left,                        % where to put the line-numbers
@@ -63,7 +55,7 @@
 
 \lstnewenvironment{Python}[1]{
 \lstset{language=python,               % choose the language of the code
-  xleftmargin=10pt,
+  xleftmargin=30pt,
   xrightmargin=10pt,
   frame=l,
   framesep=15pt,%framerule=0pt,  % sets the frame style
@@ -84,9 +76,9 @@
   captionpos=t,                        % sets the caption-position to bottom
   breaklines=true,                     % sets automatic line breaking
   framexleftmargin=5pt,
-  fillcolor=\color{mNumberbg},
-  rulecolor=\color{mNumberbg},
-  numberstyle=\tiny\color{mNumber},
+  fillcolor=\color{Numberbg},
+  rulecolor=\color{Numberbg},
+  numberstyle=\tiny\color{pNumber},
   numbersep=9pt,                      % how far the line-numbers are from the code
   numbers=left,                        % where to put the line-numbers
   stepnumber=1,                        % the step between two line-numbers.
