@@ -1,0 +1,90 @@
+% !Tex Program = xelatex
+% default code font for pdflatex
+% other font setting for xelatex
+
+\documentclass[11pt]{article}
+%\usepackage{ctex}
+
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}
+\usepackage{listings,color}
+\usepackage{fontspec}   % for special fonts
+
+%---------- matlab code style ----------
+% set Matlab highlight color
+%\definecolor{mBasic}{RGB}{248,248,242}       % default
+\definecolor{mKeyword}{RGB}{0,0,255}          % bule
+\definecolor{mString}{RGB}{160,32,240}        % purple
+\definecolor{mComment}{RGB}{34,139,34}        % green
+\definecolor{mBackground}{RGB}{245,245,245}   % lightgrey
+%\definecolor{mNumber}{RGB}{128,128,128}       % gray
+\definecolor{mNumber}{RGB}{134,145,148}       % gray
+\definecolor{mNumberbg}{RGB}{237,240,241}     % lightgrey
+
+\lstset{language=Matlab,               % choose the language of the code
+  %frame=tlbr,
+  xleftmargin=30pt,
+  xrightmargin=10pt,
+  frame=l,
+  framesep=15pt,%framerule=0pt,  % sets the frame style
+  %frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20},
+  basicstyle=\small\ttfamily,
+  keywordstyle={\color{mKeyword}},     % sets color for keywords
+  stringstyle={\color{mString}},       % sets color for strings
+  commentstyle={\color{mComment}},     % sets color for comments
+  backgroundcolor=\color{mBackground}, % choose the background color
+  title=\lstname,                      % show the filename of files included with \lstinputlisting;
+  keywords={break,case,catch,classdef,continue,else,elseif,end,for,
+  function,global,if,otherwise,parfor,persistent,return,spmd,switch,try,while},
+  showspaces=false,                    % show spaces adding particular underscores
+  showstringspaces=false,              % underline spaces within strings
+  showtabs=false,                      % show tabs within strings adding particular underscores
+  tabsize=4,                           % sets default tabsize to 2 spaces
+  captionpos=t,                        % sets the caption-position to bottom
+  breaklines=true,                     % sets automatic line breaking
+  framexleftmargin=5pt,
+  fillcolor=\color{mNumberbg},
+  rulecolor=\color{mNumberbg},
+  numberstyle=\tiny\color{mNumber},
+  numbersep=9pt,                      % how far the line-numbers are from the code
+  numbers=left,                        % where to put the line-numbers
+  stepnumber=1,                        % the step between two line-numbers.
+}
+
+\lstset{basicstyle=\footnotesize\fontspec{Consolas}}
+
+
+\title{MATLAB highlighting in LaTeX documents}
+\author{Liutao~Tian \\ \texttt{andy123t@163.com}}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\section{MATLAB code demo}
+
+\begin{lstlisting}[title={Euler method}]
+% Euler method for the ODE model
+% u'(x)=x^2+x-u, x in [0,1]
+% Initial condition: u(0)=0 ;
+% Exact solution: u(x)=-exp(-x)+x^2-x+1.
+clear all;  clf
+h=0.1;
+x=0:h:1;
+N=length(x)-1;
+u(1)=0;                        % initial value
+fun=@(t,u) t.^2+t-u;           % RHS
+
+for n=1:N
+    u(n+1)=u(n)+h.*fun(x(n),u(n));
+end
+
+ue=-exp(-x)+x.^2-x+1;          % exact solution
+plot(x,ue,'b-',x,u,'r+','LineWidth',1)
+legend('Exact ','Numerical','location','North')
+%title('Euler method','fontsize',12)
+set(gca,'fontsize',12)
+xlabel('x','fontsize', 16), ylabel('u','fontsize',16,'Rotation',0)
+\end{lstlisting}
+
+\end{document}

@@ -1,103 +1,35 @@
 # Code LaTeX Style
 
-**listings** package to design code highlighting style, mainly including MATLAB LaTeX highlighting style and Python LaTeX highlighting style.
+Use **listings** package to design code highlighting style, mainly including MATLAB LaTeX highlighting style and Python LaTeX highlighting style.
 
-## MATLAB LaTeX highlighting style
+### MATLAB LaTeX highlighting style
 
-### Source
+Source file: `mcode-style1.tex`
 
-``` latex
-\documentclass{article}
+![matlab-style1](matlab-style1.png)
 
-\input{matlab-style.tex}   % code style file
+### MATLAB LaTeX highlighting style 2
 
-\begin{lstlisting}[title={Code Name}]
-% Matlab Code
-······
-\end{lstlisting}
-```
-### Result
+Source file: `mcode-style2.tex`
 
-![main-matlab](main-matlab.png)
+![matlab-style2](matlab-style2.png)
 
-## MATLAB LaTeX highlighting style 2
+### MATLAB and Python LaTeX highlighting style 1
 
-### Source
-
-``` latex
-\documentclass{article}
-
-\input{matlab-style2.tex}   % code style file
-
-\begin{lstlisting}[title={Code Name}]
-% Matlab Code
-······
-\end{lstlisting}
-```
-
-### Result
-
-![main-matlab2](main-matlab2.png)
-
-## MATLAB and Python LaTeX highlighting style 1
-
-### Source
-
-``` latex
-\documentclass{article}
-
-\input{mp-style.tex}   % code style file
-
-\begin{Matlab}{Matlab Code}
-% Matlab Code
-······
-\end{Matlab}
-
-\begin{Python}{Python Code}
-% Python Code
-······
-\end{Python}
-```
-
-### Result
+Source file: `mpcode-style1.tex`
 
 MATLAB highlighting style is the same as the first one.
 
 Python highlighting style
 
-![main-python1](main-python1.png)
+![python-style1](python-style1.png)
 
+### MATLAB and Python LaTeX highlighting style 2
 
-## MATLAB and Python LaTeX highlighting style 2
-
-### Source
-
-``` latex
-\documentclass{article}
-
-\input{mp-style2.tex}   % code style file
-
-\begin{Matlab}{Matlab Code}
-% Matlab Code
-······
-\end{Matlab}
-
-\begin{Python}{Python Code}
-% Python Code
-······
-\end{Python}
-```
-
-### Result
+Source file: `mpcode-style2.tex`
 
 MATLAB highlighting style is the same as the second one.
 
 Python highlighting style
 
-![main-python2](main-python2.png)
-
-
-## Code Style
-
-**code-style.tex**  is a general setting for code, using the **listings** package definition of programming language.
-
+![python-style2](python-style2.png)

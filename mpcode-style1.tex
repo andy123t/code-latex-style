@@ -1,0 +1,141 @@
+% !Tex Program = xelatex
+% matlab code font - ttfamily
+% python code font - Consolas
+
+\documentclass[11pt]{article}
+%\usepackage{ctex}
+
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}
+\usepackage{listings,color}
+\usepackage{fontspec}  % for special fonts
+
+%---------- matlab and python code style ----------
+% Matlab highlight color settings
+%\definecolor{mBasic}{RGB}{248,248,242}       % default
+\definecolor{mKeyword}{RGB}{0,0,255}          % bule
+\definecolor{mString}{RGB}{160,32,240}        % purple
+\definecolor{mComment}{RGB}{34,139,34}        % green
+\definecolor{mBackground}{RGB}{245,245,245}   % lightgrey
+\definecolor{mNumber}{RGB}{128,128,128}       % gray
+
+% Python highlight color settings
+%\definecolor{pBasic}{RGB}{248, 248, 242}     % default
+\definecolor{pKeyword}{RGB}{228,0,128}        % magenta
+\definecolor{pString}{RGB}{148,0,209}         % purple
+\definecolor{pComment}{RGB}{117,113,94}       % gray
+\definecolor{pIdentifier}{RGB}{166, 226, 46}  %
+\definecolor{pBackground}{RGB}{245,245,245}   % lightgrey
+\definecolor{pNumber}{RGB}{128,128,128}       % gray
+
+\lstdefinestyle{matlab}{
+  language=matlab,               % choose the language of the code
+  xleftmargin=25pt,
+  xrightmargin=15pt,
+  frame=tlbr,framesep=4pt,framerule=0pt, % sets the frame style
+  %frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20},
+  basicstyle=\small\ttfamily,
+  keywordstyle={\color{mKeyword}},     % sets color for keywords
+  stringstyle={\color{mString}},       % sets color for strings
+  commentstyle={\color{mComment}},     % sets color for comments
+  backgroundcolor=\color{mBackground}, % choose the background color
+  %title=#1,                            % \lstname show the filename of files
+  keywords={break,case,catch,classdef,continue,else,elseif,end,for,
+  function,global,if,otherwise,parfor,persistent,return,spmd,switch,try,while},
+  showspaces=false,                    % show spaces adding particular underscores
+  showstringspaces=false,              % underline spaces within strings
+  showtabs=false,                      % show tabs within strings adding particular underscores
+  tabsize=4,                           % sets default tabsize to 2 spaces
+  captionpos=t,                        % sets the caption-position to bottom
+  breaklines=true,                     % sets automatic line breaking
+  numberstyle=\tiny\color{mNumber},
+  numbers=left,                        % where to put the line-numbers
+  stepnumber=1,                        % the step between two line-numbers.
+  %numbersep=5pt,                      % how far the line-numbers are from the code
+}
+
+\lstdefinestyle{python}{
+  language=python,               % choose the language of the code
+  xleftmargin=25pt,
+  xrightmargin=15pt,
+  frame=tlbr,framesep=4pt,framerule=0pt, % sets the frame style
+  %frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20},
+  %basicstyle=\small\ttfamily,          % sets font style for the code
+  basicstyle=\footnotesize\fontspec{Consolas},
+  keywordstyle=\color{pKeyword},       % sets color for keywords
+  stringstyle=\color{pString},         % sets color for strings
+  commentstyle=\color{pComment},       % sets color for comments
+  backgroundcolor=\color{pBackground}, % choose the background color
+  %title=#1,                            % \lstnames how the filename of files
+  emph={format_string,eff_ana_bf,permute,eff_ana_btr},
+  emphstyle=\color{pIdentifier}
+  showspaces=false,                    % show spaces adding particular underscores
+  showstringspaces=false,              % underline spaces within strings
+  showtabs=false,                      % show tabs within strings adding particular underscores
+  tabsize=4,                           % sets default tabsize to 2 spaces
+  captionpos=t,                        % sets the caption-position to bottom
+  breaklines=true,                     % sets automatic line breaking
+  numberstyle=\tiny\color{pNumber},
+  numbers=left,                        % where to put the line-numbers
+  stepnumber=1,                        % the step between two line-numbers.
+  %numbersep=5pt,                      % how far the line-numbers are from the code
+}
+
+
+
+\title{MATLAB and Python highlighting in LaTeX documents}
+\author{Liutao~Tian \\ \texttt{andy123t@163.com}}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\begin{lstlisting}[style=matlab,title={MATLAB code}]
+% Euler method for the ODE model
+% u'(x)=x^2+x-u, x in [0,1]
+% Initial condition: u(0)=0 ;
+% Exact solution: u(x)=-exp(-x)+x^2-x+1.
+clear all;  clf
+h=0.1;
+x=0:h:1;
+N=length(x)-1;
+u(1)=0;                        % initial value
+fun=@(t,u) t.^2+t-u;           % RHS
+
+for n=1:N
+    u(n+1)=u(n)+h.*fun(x(n),u(n));
+end
+
+ue=-exp(-x)+x.^2-x+1;          % exact solution
+plot(x,ue,'b-',x,u,'r+','LineWidth',1)
+legend('Exact','Numerical','location','North')
+%title('Euler method','fontsize',12)
+set(gca,'fontsize',12)
+xlabel('x','fontsize',16), ylabel('u','fontsize',16,'Rotation',0)
+\end{lstlisting}
+
+
+\begin{lstlisting}[style=python,title={Python code}]
+#PythonDraw.py
+import turtle as t
+t.setup(650, 350, 200, 200)
+t.penup()
+t.fd(-250)
+t.pendown()
+t.pensize(25)
+t.pencolor("purple color")
+t.seth(-40)
+for i in range(4):
+    t.circle(40, 80)
+    t.circle(-40, 80)
+t.circle(40, 80/2)
+t.fd(40)
+t.circle(16, 180)
+t.fd(40 * 2/3)
+t.done()
+\end{lstlisting}
+
+
+\end{document}
+
+

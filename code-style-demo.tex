@@ -1,0 +1,30 @@
+% !Tex Program = xelatex
+
+\documentclass[11pt]{article}
+
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}
+\usepackage{listings,color,xcolor}
+
+%---------- code style ----------
+\lstdefinestyle{mystyle}
+{
+  language=[LaTeX]{TeX},
+  texcsstyle=*\color{blue!80!black},
+  basicstyle=\ttfamily,
+  moretexcs={mycommand}, % user command highlight
+  frame=single,
+}
+
+\begin{document}
+
+\begin{lstlisting}[style=mystyle]
+\documentclass{article}
+\newcommand*{\mycommand}{LaTeXing}
+\begin{document}
+  Happy \mycommand
+\end{document}
+\end{lstlisting}
+
+\end{document}
+
+
